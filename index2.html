@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:200px;height:200px;
+				font-size: 14px;
+				background:palegreen;
+				color:black;
+			}
+		</style>
+		<script src="js/jquery-3.0.0.min.js" ></script>
+	</head>
+	<body>
+		<p>属性名:<input type="text" /></p>
+		<p>属性值:<input type="text" /></p>
+		<p><button>确定</button> <button>重置</button></p>
+		<div>在上方输入属性名和属性值，点击按钮查看效果</div>
+		<script>
+			$("button:eq(0)").bind("click",function(){
+				$("div").css($("input:eq(0)").val(),$("input:eq(1)").val());
+			})
+			$("button:eq(1)").bind("click",function(){
+				$("div").css("background","palegreen").css("color","black").css("font-size","14");
+			})
+		</script>
+	</body>
+</html>
