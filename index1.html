@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			li{
+				line-height: 30px;
+			}
+			div{
+				width:180px;height:20px;
+				background: paleturquoise;
+				position:absolute;
+			}
+		</style>
+		<script src="js/jquery-3.0.0.min.js" ></script>
+	</head>
+	<body>
+		<ul>
+			<li><a href="" title="治疗禽流感">治疗禽流感</a></li>
+			<li><a href="" title="乞丐的八卦故事">乞丐的八卦故事</a></li>
+			<li><a href="" title="韩国总统与朝鲜对话">韩国总统与朝鲜对话</a></li>
+			<li><a href="" title="习近平">习近平</a></li>
+			<li><a href="" title="禽流感高危">禽流感高危</a></li>
+		</ul>
+		<script>
+			$("a").each(function(index,elem){
+				$(this).bind("mouseover",function(){
+					$("<div/>").attr("class","div2").appendTo(document.body);
+					$("div").css("display","block");
+					$("div").html(this.title);
+				})
+				$(this).bind("mouseout",function(){
+					$("div").css("display","none");
+				})
+				$(this).bind("mousemove",function(e){
+					$("div").css("left",e.clientX+15+"px").css("top",e.clientY+5+"px");
+					$("div").html(this.title);
+				})
+			})
+		</script>
+	</body>
+</html>
